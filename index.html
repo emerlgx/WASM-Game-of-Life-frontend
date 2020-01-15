@@ -3,9 +3,57 @@
   <head>
     <meta charset="utf-8">
     <title>Hello wasm-pack!</title>
+    <style>
+      body {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
   </head>
   <body>
     <noscript>This page contains webassembly and javascript content, please enable javascript in your browser.</noscript>
+    <canvas id="game-of-life-canvas"></canvas>
+    <br/>
+    <button id="play-pause">Play</button>
+    <button id="clear">Clear</button>
+    <div>
+      <label for="FPS">Updates per Second (1 - 60)</label>
+      <input
+        type="number"
+        id="fps-control"
+        name="FPS"
+        min="1"
+        max="60"
+        value="15"
+      >
+    </div>
+    <div>
+      <p>Changing the board size will clear the board</p>
+      <label for="width">Board Width:</label>
+      <input
+        type="number"
+        id="board-width"
+        name="width"
+        min="3"
+        value="128"
+      >
+      
+      <label for="height">Board Height:</label>
+      <input
+        type="number"
+        id="board-height"
+        name="height"
+        min="3"
+        value="64"
+      >
+    </div>
     <script src="./bootstrap.js"></script>
   </body>
 </html>
